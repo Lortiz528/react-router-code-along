@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 
 export default function ProductList({products, type}) {
     return (
@@ -9,8 +9,10 @@ export default function ProductList({products, type}) {
                     products.map(product => {
                         return (
                             <li key={product.id}>
+                                <Link to={`/${type.toLowerCase()}/${product.id}`}>
                                 <h4>{product.name}</h4>
                                 <img src={product.image} alt={product.name} />
+                                </Link>
                             </li>
                         )
                     })
